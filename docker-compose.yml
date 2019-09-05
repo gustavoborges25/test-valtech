@@ -1,0 +1,12 @@
+version: '3'
+
+services: 
+  node:
+    image: node:10.14-alpine
+    volumes:
+      - .:/code
+      - ${HOME}/.cache/yarn:/usr/local/share/.cache/yarn/
+    working_dir: /code
+    ports:
+      - 8080:8080
+    command: yarn serve
